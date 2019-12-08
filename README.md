@@ -3,6 +3,18 @@ setuplib
 
 The ‘setuptetx‘ package provides an easy to use regression test interface for all supported platforms.
 
+The current supported implementations are:
+
+* CPython
+
+* IPython
+
+* IronPython
+
+* Jython
+
+* PyPy
+
 The current supported platforms are:
 
 * Linux, BSD, Unix, OS-X, Cygwin, and Windows
