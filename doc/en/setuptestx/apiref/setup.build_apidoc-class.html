@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>setup.build_apidoc</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setuptestx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="subnavbar" width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td>
+      <table class="items" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <span class="options">
+                  <a href="frames.html" target="_top">&lt;Frames(L)</a>
+                </span>
+                &nbsp;
+            </td>
+            <td align="center">
+                &#124;
+                &nbsp;
+                <span class="options">
+                    <a href="setup.build_apidoc-class.html" target="_top">No&nbsp;Frames</a>
+                </span>
+                &nbsp;
+                &#124;
+            </td>
+            <td align="center">
+                &nbsp;
+                <span class="options">
+                   <a href="frames-right.html" target="_top">Frames(R)&gt;</a>
+                </span>
+            </td>
+           </tr>
+      </table>
+    </td>
+    <td>
+    </td>
+ </tr>
+ <tr>
+</table>
+      <span class="breadcrumbs">
+        <a href="setup-module.html">Module&nbsp;setup</a> ::
+        Class&nbsp;build_apidoc
+      </span>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class build_apidoc</h1><p class="nomargin-top"><span class="codelink"><a href="setup-pysrc.html#build_apidoc">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_setup_bu_3" name="uml_class_diagram_for_setup_bu_3">
+<area shape="rect" id="node1_27" href="setup.build_apidoc-class.html#__init__" title="Create and initialize a new Command object." alt="" coords="205,681,396,701"/>
+<area shape="rect" id="node1" href="setup.build_apidoc-class.html" title="For pre&#45;installation, and test and debug of setupdocx." alt="" coords="193,649,407,708"/>
+<area shape="rect" id="node2_28" href="javascript:void(0);" title="setupdocx.setupdocx.build_apidoc.BuildApidocX.description" alt="" coords="144,401,459,421"/>
+<area shape="rect" id="node2_29" href="javascript:void(0);" title="setupdocx.setupdocx.build_apidoc.BuildApidocX.user_options" alt="" coords="144,421,459,441"/>
+<area shape="rect" id="node2_30" href="javascript:void(0);" title="setupdocx.setupdocx.build_apidoc.BuildApidocX.capabilities" alt="" coords="144,441,459,461"/>
+<area shape="rect" id="node2_31" href="javascript:void(0);" title="API of &#39;distutils&#39;." alt="" coords="144,464,459,484"/>
+<area shape="rect" id="node2_32" href="javascript:void(0);" title="Initializes the hard&#45;coded static values first, than reads the configuration file &#45; if present &#45; and superposes present values." alt="" coords="144,484,459,504"/>
+<area shape="rect" id="node2_33" href="javascript:void(0);" title="API of &#39;distutils&#39;." alt="" coords="144,504,459,524"/>
+<area shape="rect" id="node2_34" href="javascript:void(0);" title="Creates documents." alt="" coords="144,524,459,544"/>
+<area shape="rect" id="node2_35" href="javascript:void(0);" title="Sets the specific environment variables for the subprocess." alt="" coords="144,544,459,564"/>
+<area shape="rect" id="node2_36" href="javascript:void(0);" title="Writes the environment previously set by &#39;self.set_environment&#39; into shell &#160;scripts to be optionally sourced when the wrapper is manually called from &#160;the command line." alt="" coords="144,564,459,584"/>
+<area shape="rect" id="node2_37" href="javascript:void(0);" title="Executed before the call of the wrapper." alt="" coords="144,584,459,604"/>
+<area shape="rect" id="node2_38" href="javascript:void(0);" title="Executed after the call of the wrapper." alt="" coords="144,604,459,624"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Create API inline documentation by usage of the defined builder." alt="" coords="132,377,471,631"/>
+<area shape="rect" id="node3_39" href="javascript:void(0);" title="distutils.cmd.Command.sub_commands" alt="" coords="17,30,585,50"/>
+<area shape="rect" id="node3_40" href="javascript:void(0);" title="distutils.cmd.Command.__getattr__" alt="" coords="17,53,585,73"/>
+<area shape="rect" id="node3_41" href="javascript:void(0);" title="distutils.cmd.Command.ensure_finalized" alt="" coords="17,73,585,93"/>
+<area shape="rect" id="node3_42" href="javascript:void(0);" title="distutils.cmd.Command.dump_options" alt="" coords="17,93,585,113"/>
+<area shape="rect" id="node3_43" href="javascript:void(0);" title="If the current verbosity level is of greater than or equal to &#39;level&#39; print &#39;msg&#39; to stdout." alt="" coords="17,113,585,133"/>
+<area shape="rect" id="node3_44" href="javascript:void(0);" title="Print &#39;msg&#39; to stdout if the global DEBUG (taken from the DISTUTILS_DEBUG &#160;environment variable) flag is true." alt="" coords="17,133,585,153"/>
+<area shape="rect" id="node3_45" href="javascript:void(0);" title="Ensure that &#39;option&#39; is a string; if not defined, set it to &#39;default&#39;." alt="" coords="17,153,585,173"/>
+<area shape="rect" id="node3_46" href="javascript:void(0);" title="Ensure that &#39;option&#39; is a list of strings." alt="" coords="17,173,585,193"/>
+<area shape="rect" id="node3_47" href="javascript:void(0);" title="Ensure that &#39;option&#39; is the name of an existing file." alt="" coords="17,193,585,213"/>
+<area shape="rect" id="node3_48" href="javascript:void(0);" title="distutils.cmd.Command.ensure_dirname" alt="" coords="17,213,585,233"/>
+<area shape="rect" id="node3_49" href="javascript:void(0);" title="distutils.cmd.Command.get_command_name" alt="" coords="17,233,585,253"/>
+<area shape="rect" id="node3_50" href="javascript:void(0);" title="Set the values of any &quot;undefined&quot; options from corresponding option values &#160;in some other command object." alt="" coords="17,253,585,273"/>
+<area shape="rect" id="node3_51" href="javascript:void(0);" title="Wrapper around Distribution&#39;s &#39;get_command_obj()&#39; method: find (create if &#160;necessary and &#39;create&#39; is true) the command object for &#39;command&#39;, call its &#160;&#39;ensure_finalized()&#39; method, and return the finalized command object." alt="" coords="17,273,585,293"/>
+<area shape="rect" id="node3_52" href="javascript:void(0);" title="distutils.cmd.Command.reinitialize_command" alt="" coords="17,293,585,313"/>
+<area shape="rect" id="node3_53" href="javascript:void(0);" title="Special case of &#39;execute()&#39; for operations that process one or more input &#160;files and generate one output file." alt="" coords="17,333,585,353"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Abstract base class for defining command classes, the &quot;worker bees&quot; of the Distutils." alt="" coords="5,5,597,359"/>
+</map>
+  <img src="uml_class_diagram_for_setup_bu_3.gif" alt='' usemap="#uml_class_diagram_for_setup_bu_3" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>For pre-installation, and test and debug of setupdocx. Standard 
+  application should use the provided entry points.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>setupdocx.setupdocx.build_apidoc.BuildApidocX</code></b>:
+      <code>call_epilogue</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>distutils.cmd.Command</code></b>:
+      <code>__getattr__</code>,
+      <code>announce</code>,
+      <code>copy_tree</code>,
+      <code>debug_print</code>,
+      <code>dump_options</code>,
+      <code>ensure_dirname</code>,
+      <code>ensure_filename</code>,
+      <code>ensure_finalized</code>,
+      <code>ensure_string</code>,
+      <code>execute</code>,
+      <code>get_command_name</code>,
+      <code>get_finalized_command</code>,
+      <code>make_archive</code>,
+      <code>mkpath</code>,
+      <code>move_file</code>,
+      <code>reinitialize_command</code>,
+      <code>run_command</code>,
+      <code>spawn</code>,
+      <code>warn</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>setupdocx.setupdocx.build_apidoc.BuildApidocX</code></b>:
+      <code>description</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>distutils.cmd.Command</code></b>:
+      <code>sub_commands</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="setup-pysrc.html#build_apidoc.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and initialize a new Command object.  Most importantly, invokes
+  the 'initialize_options()' method, which is the real initializer and 
+  depends on the actual command being instantiated.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+    <dt>Overrides:
+        distutils.cmd.Command.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="call_prologue"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">call_prologue</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Executed before the call of the wrapper.</p>
+  <p>The default version supports *Sphinx* and writes the project data into
+  the file '&lt;build-dir&gt;/&lt;build-reldir&gt;/project.rst'. Replace 
+  this method in the derived class as required.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="copy_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">copy_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">infile</span>,
+        <span class="sig-arg">outfile</span>,
+        <span class="sig-arg">preserve_mode</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">preserve_times</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">link</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">level</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Copy a file respecting verbose, dry-run and force flags.  (The former 
+  two default to whatever is in the Distribution object, and the latter 
+  defaults to false for commands that don't define it.)</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ensure_string_list"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ensure_string_list</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">option</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Ensure that 'option' is a list of strings.  If 'option' is currently a
+  string, we split it either on /,\s*/ or /\s+/, so &quot;foo bar 
+  baz&quot;, &quot;foo,bar,baz&quot;, and &quot;foo,   bar baz&quot; all 
+  become [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;].</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="finalize_options"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">finalize_options</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+API of 'distutils'.
+
+Args:
+    none
+        
+Returns:
+    none
+
+Raises:
+    SetuplibBuildApidocSetupError
+
+    SetuplibBuildApidocError
+
+    pass-through
+
+</pre>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+    <dt>Overrides:
+        distutils.cmd.Command.finalize_options
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_sub_commands"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_sub_commands</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine the sub-commands that are relevant in the current 
+  distribution (ie., that need to be run).  This is based on the 
+  'sub_commands' class attribute: each tuple in that list may include a 
+  method that we call to determine if the subcommand needs to be run for 
+  the current distribution.  Return a list of command names.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="initialize_options"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initialize_options</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>API of 'distutils'.</p>
+  <p>REMARK: verbose and debug are encapsulated/hidden by distutils.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+    <dt>Overrides:
+        distutils.cmd.Command.initialize_options
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="make_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">make_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">infiles</span>,
+        <span class="sig-arg">outfile</span>,
+        <span class="sig-arg">func</span>,
+        <span class="sig-arg">args</span>,
+        <span class="sig-arg">exec_msg</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">skip_msg</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">level</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Special case of 'execute()' for operations that process one or more 
+  input files and generate one output file.  Works just like 'execute()', 
+  except the operation is skipped and a different message printed if 
+  'outfile' already exists and is newer than all files listed in 'infiles'.
+  If the command defined 'self.force', and it is true, then the command is 
+  unconditionally run -- does no timestamp checks.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates documents. Calls the defined and activated wrapper scripts. 
+  The call flow could be customized by various interfaces. :</p>
+<pre class="literalblock">
+       I.      self.set_environment()    # could be superposed by derived class
+       II.     self.call_prologue()       # could be superposed by derived class 
+       III.    subprocesses:
+           1.    builder_path.sh          # could be arbitrary custom call wrapper
+           2.    build_docx.sh            # could be arbitrary custom call wrapper
+           3.    build_apiref.sh          # could be arbitrary custom call wrapper
+       IV.     self.call_epilogue()       # could be superposed by derived class
+</pre>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+    <dt>Overrides:
+        distutils.cmd.Command.run
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_builder_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_builder_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fpname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Initializes the hard-coded static values first, than
+reads the configuration file - if present - and superposes
+present values. 
+
+The configuration file is expected to be located within 
+the builder directory.
+
+Args:
+    fpname:
+        The file or directory path name of the setup.
+        File path names are treated literally, while
+        directory names are scanned for::
+
+            capabilities.&lt;ext&gt;
+            
+            ext := (json)
+            # Current version supports JSON only.
+        
+Returns:
+    Loaded configutation 'capabilities'.
+
+Raises:
+    SetuplibBuildApidocSetupError
+    
+    pass-through
+    
+
+</pre>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_environment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_environment</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the specific environment variables for the subprocess. In 
+  addition writes source files of the environment for the manual command 
+  line start.</p>
+  <p>The defined variables represent the interface to the wrapper calls, so
+  no modification of the provided environment is permitted. When additional
+  information is required do not forget to call this method.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_undefined_options"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_undefined_options</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">src_cmd</span>,
+        <span class="sig-arg">*option_pairs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set the values of any &quot;undefined&quot; options from corresponding
+  option values in some other command object.  &quot;Undefined&quot; here 
+  means &quot;is None&quot;, which is the convention used to indicate that 
+  an option has not been changed between 'initialize_options()' and 
+  'finalize_options()'.  Usually called from 'finalize_options()' for 
+  options that depend on some other command rather than another option of 
+  the same command.  'src_cmd' is the other command from which option 
+  values will be taken (a command object will be created for it if 
+  necessary); the remaining arguments are '(src_option,dst_option)' tuples 
+  which mean &quot;take the value of 'src_option' in the 'src_cmd' command 
+  object, and copy it to 'dst_option' in the current command 
+  object&quot;.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_environment_setter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_environment_setter</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes the environment previously set by 'self.set_environment' into 
+  shell scripts to be optionally sourced when the wrapper is manually 
+  called from the command line.</p>
+  <p>ATTENTION: 'self.set_environment' must be called before.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="capabilities"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">capabilities</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+yapyutils.config.capabilities.Capability({&quot;components&quot;: {&quot;default&quot;: &quot;s<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+phinx-apidoc&quot;, &quot;sphinx&quot;: &quot;sphinx-apidoc&quot;, &quot;sphinx-apidoc&quot;: &quot;sphinx-api<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+doc&quot;,}, &quot;sphinx-apidoc&quot;: {&quot;metatypes&quot;: [&quot;rst&quot;,], &quot;doctypes&quot;: [&quot;html&quot;,]<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+}, &quot;defaults&quot;: {&quot;builder&quot;: &quot;default&quot;, &quot;builder_path&quot;: None, &quot;build_dir<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;: &quot;build/&quot;, &quot;build_reldir&quot;: &quot;sphinx/apidoc/&quot;, &quot;clean&quot;: None, &quot;config_<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+path&quot;: None, &quot;docname&quot;: None, &quot;docsource&quot;: &quot;docsrc/&quot;, &quot;doctype&quot;: None,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ &quot;indexsrc&quot;: &quot;index.rst&quot;, &quot;name&quot;: None, &quot;release&quot;: None, &quot;srcdir&quot;: Non<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+e, &quot;template&quot;: &quot;&quot;, &quot;version&quot;: None,}})
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="user_options"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">user_options</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[('builder=', None, &quot;The builder to be used for the processing of the <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+inline documentation. &quot; &quot;See '--help-builder'. &quot; &quot;Default: 'sphinx'&quot;),<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ ('builder-path=', None, &quot;The directory path of the builder. &quot; &quot;Defaul<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+t: '&lt;SETUPDOCX-PYTHONPATH&gt;/setupdocx/builder/'&quot;), ('build-dir=', None,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ &quot;The name of the build directory. &quot; &quot;Default: 'build/'&quot;), ('build-rel<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+dir=', None, &quot;The name of the relative build subdirectory.&quot; &quot; Default:<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ '&lt;builder&gt;/apidoc/'&quot;), ('clean', None, &quot;Removes the cached previous b<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+uild. Default: False&quot;), ('clean-all', None, &quot;Removes the complete buil<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setuptestx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="footTable" border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+        Copyright(C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="https://arnocan.wordpress.com"
+        >https://arnocan.wordpress.com</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="lest" class="footer">
+    Generated by Epydoc 4.0.4 / Python-3.8 / fedora27 on Sun Dec  8 13:01:44 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

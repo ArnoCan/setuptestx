@@ -1,0 +1,611 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Command Line Interface &mdash; setuptestx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Documents" href="index_part_documents.html" />
+    <link rel="prev" title="3. Blueprint" href="index_part_blueprint.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.38
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupTestX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Command Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#synopsis">4.1. SYNOPSIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-options">4.2. GLOBAL OPTIONS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sdk">4.2.1. –sdk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#no-install-requires">4.2.2. –no-install-requires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#offline">4.2.3. –offline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-setuptestx">4.2.4. –help-setuptestx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">4.3. COMMANDS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testx">4.3.1. testx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#abs">4.3.1.1. –abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#call">4.3.1.2. –call=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coff">4.3.1.3. –coff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation">4.3.1.4. –implementation=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jyjar">4.3.1.5. –jyjar=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jyjvm">4.3.1.6. –jyjvm=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jyprop">4.3.1.7. –jyprop=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#noexec">4.3.1.8. –noexec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start">4.3.1.9. –start=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testlib">4.3.1.10. –testlib=</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verbose">4.3.1.11. –verbose</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#description">4.4. DESCRIPTION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">4.5. EXAMPLES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#see-also">4.6. SEE ALSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">4.7. LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copyright">4.8. COPYRIGHT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">5. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_modules.html">6. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">7. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">8. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">9. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">10. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">11. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setuptestx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4. Command Line Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setuptestx_cli.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-line-interface">
+<span id="setuptestxcommandscli"></span><h1>4. Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<p>The package <em>setuptestx</em> provides the extension command <em>testx</em> for the standard
+command line interface of <em>setup.py</em>.</p>
+<blockquote>
+<div><pre class="literal-block"><a class="reference internal" href="#setuplibcommands-testx"><span class="std std-ref">python setup.py testx</span></a></pre>
+</div></blockquote>
+<p>With the additional common local options fo <em>setup.py</em>:</p>
+<blockquote>
+<div><div class="tmptab">
+<div class="overviewtab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#setuptestxoptions-sdk"><span class="std std-ref">–sdk</span></a></p></td>
+<td><p>Extends the dependencies for development utilities.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#setuptestxoptions-no-install-requires"><span class="std std-ref">–no-install-requires</span></a></p></td>
+<td><p>Deactivates pre-requisites.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#setuptestxoptions-offline"><span class="std std-ref">–offline</span></a></p></td>
+<td><p>Deactivates PyPi access.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#setuptestxoptions-help-setuplib"><span class="std std-ref">–help-setuplib</span></a></p></td>
+<td><p>Displays help for <em>setuplib</em>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div></blockquote>
+<div class="section" id="synopsis">
+<span id="setuplibclisynopsis"></span><h2>4.1. SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<pre class="literal-block">setup.py <a class="reference internal" href="#setuplibclioptions"><span class="std std-ref">[Global-OPTIONS]</span></a> <a class="reference internal" href="#setuplibcommands"><span class="std std-ref">[COMMANDS-with-context-OPTIONS]</span></a></pre>
+</div>
+<div class="section" id="global-options">
+<span id="setuplibclioptions"></span><h2>4.2. GLOBAL OPTIONS<a class="headerlink" href="#global-options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sdk">
+<span id="setuptestxoptions-sdk"></span><span id="index-0"></span><h3>4.2.1. –sdk<a class="headerlink" href="#sdk" title="Permalink to this headline">¶</a></h3>
+<p>Supports a separate dependency list for the build and packaging environment.
+The following informal convention has to be implemented within the file <em>setup.py</em>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__sdk</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="sd">&quot;&quot;&quot;Set by the option &quot;--sdk&quot;. Controls the installation environment.&quot;&quot;&quot;</span>
+
+<span class="k">if</span> <span class="s1">&#39;--sdk&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="n">_sdk</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;--sdk&#39;</span><span class="p">)</span>
+
+
+<span class="n">_packages_sdk</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;setuplib&#39;</span><span class="p">]</span> <span class="p">)</span>  <span class="c1"># your development packages</span>
+<span class="sd">&quot;&quot;&quot;Python packages to be installed.&quot;&quot;&quot;</span>
+
+
+<span class="k">if</span> <span class="n">__sdk</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>  <span class="c1"># @UnusedImport</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;WARNING: Cannot import package &#39;sphinx_rtd_theme&#39;, cannot create local &#39;ReadTheDocs&#39; style.&quot;</span><span class="p">)</span>
+
+    <span class="n">_install_requires</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;sphinx &gt;= 1.4&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;epydoc &gt;= 3.0&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">_packages</span> <span class="o">=</span> <span class="n">_packages_sdk</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>For an example refer to <em>setup.py</em> of <em>setuplib</em>.</p>
+</div>
+<div class="section" id="no-install-requires">
+<span id="setuptestxoptions-no-install-requires"></span><span id="index-1"></span><h3>4.2.2. –no-install-requires<a class="headerlink" href="#no-install-requires" title="Permalink to this headline">¶</a></h3>
+<p>Suppresses installation dependency checks,
+requires appropriate PYTHONPATH.
+The following informal convention has to be implemented within the file <em>setup.py</em>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__no_install_requires</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="s1">&#39;--no-install-requires&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="n">__no_install_requires</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;--no-install-requires&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__no_install_requires</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Changed to offline mode, ignore install dependencies completely.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Requires appropriate PYTHONPATH.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Ignored dependencies are:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">_install_requires</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ir</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+    <span class="n">_install_requires</span><span class="o">=</span><span class="p">[]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>For an example refer to <em>setup.py</em> of <em>setuplib</em>.</p>
+</div>
+<div class="section" id="offline">
+<span id="setuptestxoptions-offline"></span><span id="index-2"></span><h3>4.2.3. –offline<a class="headerlink" href="#offline" title="Permalink to this headline">¶</a></h3>
+<p>Sets online dependencies to offline, or ignores online
+dependencies.
+The following informal convention has to be implemented within the file <em>setup.py</em>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__offline</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="s1">&#39;--offline&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="n">__offline</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">__no_install_requires</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;--offline&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>For an example refer to <em>setup.py</em> of <em>setuplib</em>.</p>
+</div>
+<div class="section" id="help-setuptestx">
+<span id="setuptestxoptions-help-setuplib"></span><span id="index-3"></span><h3>4.2.4. –help-setuptestx<a class="headerlink" href="#help-setuptestx" title="Permalink to this headline">¶</a></h3>
+<p>Special help for <em>setuptestx</em>.</p>
+<p>For an example refer to <em>setup.py</em>.</p>
+</div>
+</div>
+<div class="section" id="commands">
+<span id="setuplibcommands"></span><h2>4.3. COMMANDS<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="tmptab">
+<div class="overviewtab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#setuplibcommands-testx"><span class="std std-ref">testx</span></a></p></td>
+<td><p>Call regression tests, and poll information on execution environment.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div></blockquote>
+<div class="section" id="testx">
+<span id="setuplibcommands-testx"></span><span id="index-5"></span><h3>4.3.1. testx<a class="headerlink" href="#testx" title="Permalink to this headline">¶</a></h3>
+<p>Calls <em>unittest</em> in the subdirectory <em>tests</em>.
+Supports multiple <em>Python</em> implementations, including all major implementations.</p>
+<div class="section" id="abs">
+<span id="index-6"></span><h4>4.3.1.1. –abs<a class="headerlink" href="#abs" title="Permalink to this headline">¶</a></h4>
+<p>Change all paths where possible to absolute.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">abs</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="call">
+<span id="index-7"></span><h4>4.3.1.2. –call=<a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h4>
+<p>Call of tests, default ‘CallCase.py’.</p>
+<blockquote>
+<div><pre class="literal-block">setup.py testx --call=&lt;call-program&gt;  # see <em>unittest</em> '-p'
+setup.py testx -p &lt;call-program&gt;      # see <em>unittest</em> '-p'</pre>
+</div></blockquote>
+</div>
+<div class="section" id="coff">
+<span id="index-8"></span><h4>4.3.1.3. –coff<a class="headerlink" href="#coff" title="Permalink to this headline">¶</a></h4>
+<p>JYTHON: set cache off</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">coff</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>sets</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jython</span> <span class="o">-</span><span class="n">Dpython</span><span class="o">.</span><span class="n">cachedir</span><span class="o">.</span><span class="n">skip</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="implementation">
+<span id="index-9"></span><h4>4.3.1.4. –implementation=<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h4>
+<p>The Python implementation, default is ‘python’ - CPython.
+Changes to e.g. ‘jython’ needs eventually additional options.
+Tested values are: python, jython, ipython, ipy, pypy.</p>
+<p>Call of tests, default ‘CallCase.py’.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">call</span><span class="o">=&lt;</span><span class="n">python</span><span class="o">-</span><span class="n">implementation</span><span class="o">&gt;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">-</span><span class="n">i</span>     <span class="o">&lt;</span><span class="n">python</span><span class="o">-</span><span class="n">implementation</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="jyjar">
+<span id="index-10"></span><h4>4.3.1.5. –jyjar=<a class="headerlink" href="#jyjar" title="Permalink to this headline">¶</a></h4>
+<p>JYTHON: switch to call of ‘java -jar &lt;use-jython-jar&gt;’,
+requires absolute path.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">jyjar</span><span class="o">=&lt;</span><span class="n">use</span><span class="o">-</span><span class="n">jython</span><span class="o">-</span><span class="n">jar</span><span class="o">&gt;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">-</span><span class="n">j</span> <span class="o">&lt;</span><span class="n">use</span><span class="o">-</span><span class="n">jython</span><span class="o">-</span><span class="n">jar</span><span class="o">&gt;</span>
+
+<span class="c1"># default: jython, not &#39;jython.jar&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The default executable names for <em>Jython</em> are</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">jython</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="jyjvm">
+<span id="index-11"></span><h4>4.3.1.6. –jyjvm=<a class="headerlink" href="#jyjvm" title="Permalink to this headline">¶</a></h4>
+<p>JYTHON: Java JVM options for Jyhon:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">jyjvm</span><span class="o">=&lt;</span><span class="n">jvm</span><span class="o">-</span><span class="n">options</span><span class="o">&gt;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">-</span><span class="n">J</span><span class="o">&lt;</span><span class="n">jvm</span><span class="o">-</span><span class="n">options</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>for example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jython</span> <span class="o">-</span><span class="n">J</span><span class="o">-</span><span class="n">Xmx512m</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="jyprop">
+<span id="index-12"></span><h4>4.3.1.7. –jyprop=<a class="headerlink" href="#jyprop" title="Permalink to this headline">¶</a></h4>
+<p>JYTHON: properties ‘&lt;prop&gt;=&lt;value&gt;’,</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">jyprop</span><span class="o">=</span><span class="s1">&#39;&lt;prop&gt;=&lt;value&gt;&#39;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">-</span><span class="n">D</span> <span class="s1">&#39;&lt;prop&gt;=&lt;value&gt;&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>for example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jython</span> <span class="o">-</span><span class="n">Dpython</span><span class="o">.</span><span class="n">path</span><span class="o">=/</span><span class="n">my</span><span class="o">/</span><span class="n">path</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="noexec">
+<span id="index-13"></span><h4>4.3.1.8. –noexec<a class="headerlink" href="#noexec" title="Permalink to this headline">¶</a></h4>
+<p>Print only, do not execute.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">noexec</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="start">
+<span id="index-14"></span><h4>4.3.1.9. –start=<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h4>
+<p>Start package, e.g. ‘tests’ or ‘tests.setuplib’.</p>
+<blockquote>
+<div><pre class="literal-block">setup.py testx --start=&lt;start-package&gt;  # see <em>unittest</em> '-s'
+setup.py testx -s &lt;start-package&gt;       # see <em>unittest</em> '-s'</pre>
+</div></blockquote>
+</div>
+<div class="section" id="testlib">
+<span id="index-15"></span><h4>4.3.1.10. –testlib=<a class="headerlink" href="#testlib" title="Permalink to this headline">¶</a></h4>
+<p>The test library, default ‘unittest discover’.</p>
+<blockquote>
+<div><pre class="literal-block">setup.py testx --testlb=&lt;module-of-test-framework&gt;  # see <em>unittest</em> '-m'
+setup.py testx -m       &lt;module-of-test-framework&gt;  # see <em>unittest</em> '-m'</pre>
+</div></blockquote>
+</div>
+<div class="section" id="verbose">
+<span id="index-16"></span><h4>4.3.1.11. –verbose<a class="headerlink" href="#verbose" title="Permalink to this headline">¶</a></h4>
+<p>Verbose flag.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="n">verbose</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Passes the verbose flag, e.g. ‘jython -v’ or ‘python -v’.</p>
+</div>
+</div>
+</div>
+<div class="section" id="description">
+<h2>4.4. DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The call interface ‘settestx’ provides command line extensions for
+the regression tests.</p>
+</div>
+<div class="section" id="examples">
+<span id="setuplibexamples"></span><h2>4.5. EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ul id="id1">
+<li><p><em>CPython</em> - see <a class="reference internal" href="howto/howto_cpython.html#howto-cpython"><span class="std std-ref">Howto CPython</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">python</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">python3</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">python3</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">python2</span>
+</pre></div>
+</div>
+</li>
+<li><p><em>IPython</em> - see <a class="reference internal" href="howto/howto_ipython.html#howto-ipython"><span class="std std-ref">Howto IPython</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">ipython</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">ipython2</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">ipython3</span>
+</pre></div>
+</div>
+</li>
+<li><p><em>IronPython</em> - see <a class="reference internal" href="howto/howto_ironpython.html#howto-ironpython"><span class="std std-ref">Howto IronPython</span></a>:</p></li>
+<li><p><em>Jython</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">jython</span>
+</pre></div>
+</div>
+</li>
+<li><p><em>PyPy</em> - see <a class="reference internal" href="howto/howto_pypy.html#howto-pypy"><span class="std std-ref">Howto PyPy</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">pypy</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">pypy2</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">testx</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">vinfo</span> <span class="o">-</span><span class="n">i</span> <span class="n">pypy3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>The <em>setuptestx</em> supports hereby basic subprocess calls by <em>os.system()</em>,
+thus supports the modification of the called environment by shell inheritance.
+For example in case of the <em>bash</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PATH=/opt/pypy/pypy3.5-5.10.1/bin/:$PATH python setup.py testx --print-vinfo -i pypy
+</pre></div>
+</div>
+<p>For more advanced options refer to a never release of the <em>epyunit</em> <a class="reference internal" href="references.html#epyunit" id="id2"><span>[EPYUNIT]</span></a>.</p>
+</div>
+<div class="section" id="see-also">
+<h2>4.6. SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference internal" href="#setuptestxcommandscli"><span class="std std-ref">setuplib</span></a>,
+<a class="reference internal" href="references.html#setuptools" id="id3"><span>[setuptools]</span></a>, <a class="reference internal" href="references.html#distutils" id="id4"><span>[distutils]</span></a></p>
+</div></blockquote>
+</div>
+<div class="section" id="license">
+<h2>4.7. LICENSE<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference internal" href="ModifiedArtisticLicense20.html#modified-artistic-license-20"><span class="std std-ref">modified Artistic License</span></a> = <a class="reference internal" href="ModifiedArtisticLicense20.html#artistic-license-20"><span class="std std-ref">ArtisticLicense20</span></a> + <a class="reference internal" href="ModifiedArtisticLicense20.html#licenses-amendments"><span class="std std-ref">Peer-to-Peer-Fairplay-amendments</span></a></p>
+</div></blockquote>
+</div>
+<div class="section" id="copyright">
+<h2>4.8. COPYRIGHT<a class="headerlink" href="#copyright" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Copyright (C)2019 Arno-Can Uestuensoez &#64;Ingenieurbuero Arno-Can Uestuensoez</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="index_part_documents.html" class="btn btn-neutral float-right" title="5. Documents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index_part_blueprint.html" class="btn btn-neutral float-left" title="3. Blueprint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 08, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Howto Extended the TestsX Class &mdash; setuptestx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQ" href="../faq/index.html" />
+    <link rel="prev" title="Howto PyPy" href="howto_pypy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.38
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">SetupTestX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setuptestx_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_documents.html">5. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modules.html">6. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_indices.html">7. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_resources.html">8. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">9. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">10. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_license.html">11. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Howto</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="howto_cpython.html">Howto CPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto_ipython.html">Howto IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto_ironpython.html">Howto IronPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto_jython.html">Howto Jython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto_pypy.html">Howto PyPy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Howto Extended the TestsX Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">setuptestx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Howto</a> &raquo;</li>
+        
+      <li>Howto Extended the TestsX Class</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/howto/howto_extended_tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="howto-extended-the-testsx-class">
+<span id="howto-extended-tests"></span><h1>Howto Extended the TestsX Class<a class="headerlink" href="#howto-extended-the-testsx-class" title="Permalink to this headline">¶</a></h1>
+<p>The <em>setuptestx</em> provides two call APIs.
+The call by the imported class, which is used by the included <em>setup.py</em>,
+and an entry point, for the standard application, which does not need any
+modification of the <em>setup.py</em>.</p>
+<ol class="arabic" start="0">
+<li><p>The standard entry point does not require any modification of the <em>steup.py</em>.</p></li>
+<li><p>For derived custom classes:</p>
+<ol class="loweralpha">
+<li><p>Import in your <a class="reference internal" href="../setup.html#setup-py"><span class="std std-ref">setup.py</span></a> for example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># setup extension modules</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">setuplib</span> <span class="k">import</span> <span class="n">usage</span>
+<span class="kn">from</span> <span class="nn">setuptestx.testx</span> <span class="k">import</span> <span class="n">TestX</span>  <span class="c1"># for unit tests</span>
+
+<span class="k">class</span> <span class="nc">testx</span><span class="p">(</span><span class="n">TestX</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="n">TestX</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Hook them in e.g. as a command in your <a class="reference internal" href="../setup.html#setup-py"><span class="std std-ref">setup.py</span></a> by:</p>
+<blockquote>
+<div><pre class="literal-block">setup(
+    cmdclass={                           # see <a class="reference internal" href="../references.html#setuppy" id="id1"><span>[setuppy]</span></a> and <a class="reference internal" href="../setup.html#setup-py"><span class="std std-ref">setup.py</span></a>
+        'testx': testx,
+    },
+    ...
+)</pre>
+</div></blockquote>
+</li>
+</ol>
+</li>
+<li><p>Use it from the command line call for example by:</p>
+<blockquote>
+<div><pre class="literal-block">python <a class="reference internal" href="../setup_py_src.html#setuppysrc"><span class="std std-ref">setup.py</span></a> <a class="reference internal" href="../setuptestx_cli.html#setuplibcommands-testx"><span class="std std-ref">testx</span></a></pre>
+</div></blockquote>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/index.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="howto_pypy.html" class="btn btn-neutral float-left" title="Howto PyPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 08, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
