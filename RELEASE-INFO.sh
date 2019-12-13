@@ -1,5 +1,5 @@
 # current release of the project
-RELEASE=00.01.044
+RELEASE=00.01.045
 
 # name of the project
 PROJECTNAME=setuptestx

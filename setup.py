@@ -39,7 +39,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__vers__ = [0, 1, 44, ]
+__vers__ = [0, 1, 45, ]
 __version__ = "%02d.%02d.%03d" % (__vers__[0], __vers__[1], __vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -68,6 +68,7 @@ _packages_sdk = _packages
 
 _install_requires = [
     'setuplibcore >= 0.1.0',
+    'yapyutils >= 0.1.0',
     'pythonids >= 0.1.31',
     'yapyutils >= 0.1.0',
 ]

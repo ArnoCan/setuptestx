@@ -58,7 +58,7 @@ Project Data
 
 * VERSION: 00.01
 
-* RELEASE: 00.01.044
+* RELEASE: 00.01.045
 
 * STATUS: alpha
 
