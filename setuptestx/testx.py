@@ -27,7 +27,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__version__ = "01.01.040"
+__version__ = "01.01.042"
 
 __product_family__ = "setuplib"
 __product__ = "testx"

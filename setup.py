@@ -27,33 +27,10 @@ except:
 
 import os
 import sys
-import re
 
 import setuptools
 
 import yapyutils.help
-#
-# setup extension modules
-#
-
-#***
-# the following parts are required as for the setuptestx itself
-# others may use the entry points
-#***
-
-#***********************************************************************
-# REMARK:
-#   documents and regression tests
-#
-#   the classes are required here for setuptestx only
-#   others should use the entry point, so do not need to import classes
-#
-#***********************************************************************
-import setupdocx.build_docx
-import setupdocx.dist_docx
-import setupdocx.install_docx
-import setupdocx.build_apiref
-import setupdocx.build_apidoc
 
 # unittests
 import setuptestx.testx
@@ -64,7 +41,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__vers__ = [0, 1, 41, ]
+__vers__ = [0, 1, 42, ]
 __version__ = "%02d.%02d.%03d" % (__vers__[0], __vers__[1], __vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -92,6 +69,7 @@ _packages = ['setuptestx',]
 _packages_sdk = _packages
 
 _install_requires = [
+    'setuplibcore >= 0.1.0',
     'pythonids >= 0.1.31',
     'yapyutils >= 0.1.0',
 ]
@@ -143,54 +121,6 @@ if __no_install_requires:
     _install_requires = []
 
 
-class setuptestxx(setuptestx.testx.TestX):
-    """For pre-installation, and test and debug of setuptestx.
-    Standard application sshould use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setuptestx.testx.TestX.__init__(self, *args, **kargs)
-
-
-class build_docx(setupdocx.build_docx.BuildDocX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setupdocx.build_docx.BuildDocX.__init__(self, *args, **kargs)
-
-
-class install_docx(setupdocx.install_docx.InstallDocX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setupdocx.install_docx.InstallDocX.__init__(self, *args, **kargs)
-
-
-class dist_docx(setupdocx.dist_docx.DistDocX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setupdocx.dist_docx.DistDocX.__init__(self, *args, **kargs)
-
-
-class build_apidoc(setupdocx.build_apidoc.BuildApidocX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setupdocx.build_apidoc.BuildApidocX.__init__(self, *args, **kargs)
-
-
-class build_apiref(setupdocx.build_apiref.BuildApirefX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setupdocx.build_apiref.BuildApirefX.__init__(self, *args, **kargs)
-
-
 class testx(setuptestx.testx.TestX):
     """For pre-installation, and test and debug of setupdocx. 
     Standard application should use the provided entry points. 
@@ -206,11 +136,6 @@ setuptools.setup(
     author=__author__,
     author_email=__author_email__,
     cmdclass={
-        'build_apidoc': build_apidoc,  # for bootstrap of setuplib - not required for applications
-        'build_apiref': build_apiref,  # for bootstrap of setuplib - not required for applications
-        'build_docx': build_docx,      # for bootstrap of setuplib - not required for applications
-        'dist_docx': dist_docx,        # for bootstrap of setuplib - not required for applications
-        'install_docx': install_docx,  # for bootstrap of setuplib - not required for applications
         'testx': testx,                # for bootstrap of setuplib - not required for applications
     },
     description="Support test automation for setuptools / distutils.",
