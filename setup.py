@@ -30,8 +30,6 @@ import sys
 
 import setuptools
 
-import yapyutils.help
-
 # unittests
 import setuptestx.testx
 
@@ -41,7 +39,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__vers__ = [0, 1, 43, ]
+__vers__ = [0, 1, 44, ]
 __version__ = "%02d.%02d.%03d" % (__vers__[0], __vers__[1], __vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -91,11 +89,6 @@ if __sdk:  # pragma: no cover
 
     _packages = _packages_sdk
 
-
-# Help on addons.
-if '--help-setuptestx' in sys.argv:
-    yapyutils.help.usage('setup')
-    sys.exit(0)
 
 __no_install_requires = False
 if '--no-install-requires' in sys.argv:
@@ -155,12 +148,6 @@ setuptools.setup(
     zip_safe=False,
 )
 
-
-if '--help' in sys.argv or '-h' in sys.argv:
-    print()
-    print("Help on usage extensions by " + str(_name))
-    print("   --help-" + str(_name))
-    print()
 
 sys.exit(0)
 
