@@ -30,16 +30,13 @@ import sys
 
 import setuptools
 
-# unittests
-import setuptestx.testx
-
 __author__ = 'Arno-Can Uestuensoez'
 __author_email__ = 'acue_sf2@sourceforge.net'
 __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__vers__ = [0, 1, 45, ]
+__vers__ = [0, 1, 46, ]
 __version__ = "%02d.%02d.%03d" % (__vers__[0], __vers__[1], __vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -115,25 +112,13 @@ if __no_install_requires:
     _install_requires = []
 
 
-class testx(setuptestx.testx.TestX):
-    """For pre-installation, and test and debug of setupdocx. 
-    Standard application should use the provided entry points. 
-    """
-    def __init__(self, *args, **kargs):
-        setuptestx.testx.TestX.__init__(self, *args, **kargs)
-
-
 #
 # see setup.py for remaining parameters
 #
 setuptools.setup(
     author=__author__,
     author_email=__author_email__,
-    cmdclass={
-        'testx': testx,                # for bootstrap of setuplib - not required for applications
-    },
     description="Support test automation for setuptools / distutils.",
-#    distclass=setuptestx.dist.Distribution,  # extends the standard help-display of setuptools
     download_url="https://sourceforge.net/projects/setuptestx/files/",
     entry_points={                    # for standard application
         'distutils.commands': 'testx = setuptestx.testx:TestX',
