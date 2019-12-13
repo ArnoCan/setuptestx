@@ -58,14 +58,13 @@ import setupdocx.build_apidoc
 # unittests
 import setuptestx.testx
 
-
 __author__ = 'Arno-Can Uestuensoez'
 __author_email__ = 'acue_sf2@sourceforge.net'
 __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "1936395c-9621-42df-b5ec-9c4df4f1ff49"
 
-__vers__ = [0, 1, 38, ]
+__vers__ = [0, 1, 41, ]
 __version__ = "%02d.%02d.%03d" % (__vers__[0], __vers__[1], __vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -84,68 +83,18 @@ _mypath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(_mypath))
 
 
-#--------------------------------------
-#
-# Package parameters for setuptools
-#
-#--------------------------------------
-
 _name = 'setuptestx'
-"""package name"""
-
 __pkgname__ = "setuptestx"
-"""package name"""
 
 _version = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],)
-"""assembled version string"""
 
-_author = __author__
-"""author of the package"""
-
-_author_email = __author_email__
-"""author's email """
-
-_license = __license__
-"""license"""
-
-#_packages = setuptools.find_packages('setuptestx')
 _packages = ['setuptestx',]
-"""Python packages to be installed."""
-
 _packages_sdk = _packages
-
-_scripts = [
-]
-"""Scripts to be installed."""
-
-_package_data = {
-    'setuptestx': [
-        'README.md', 'ArtisticLicense20.html', 'licenses-amendments.txt',
-    ],
-}
-"""Provided data of the package."""
-
-_url = 'https://sourceforge.net/projects/setuptestx/'
-"""URL of this package"""
-
-# _download_url="https://github.com/ArnoCan/setuptestx/"
-_download_url = "https://sourceforge.net/projects/setuptestx/files/"
-
 
 _install_requires = [
     'pythonids >= 0.1.31',
     'yapyutils >= 0.1.0',
-    'yapydata >= 0.1.0',
-    'sourceinfo >= 0.1.0',
 ]
-"""prerequired non-standard packages"""
-
-
-_description = "Support test automation for setuptools / distutils."
-
-_README = os.path.join(os.path.dirname(__file__), 'README.md')
-_long_description = open(_README).read()
-"""detailed description of this package"""
 
 
 if __sdk:  # pragma: no cover
@@ -164,7 +113,6 @@ if __sdk:  # pragma: no cover
 
     _packages = _packages_sdk
 
-_test_suite = "tests.CallCase"
 
 # Help on addons.
 if '--help-setuptestx' in sys.argv:
@@ -255,8 +203,8 @@ class testx(setuptestx.testx.TestX):
 # see setup.py for remaining parameters
 #
 setuptools.setup(
-    author=_author,
-    author_email=_author_email,
+    author=__author__,
+    author_email=__author_email__,
     cmdclass={
         'build_apidoc': build_apidoc,  # for bootstrap of setuplib - not required for applications
         'build_apiref': build_apiref,  # for bootstrap of setuplib - not required for applications
@@ -265,20 +213,19 @@ setuptools.setup(
         'install_docx': install_docx,  # for bootstrap of setuplib - not required for applications
         'testx': testx,                # for bootstrap of setuplib - not required for applications
     },
-    description=_description,
+    description="Support test automation for setuptools / distutils.",
 #    distclass=setuptestx.dist.Distribution,  # extends the standard help-display of setuptools
-    download_url=_download_url,
+    download_url="https://sourceforge.net/projects/setuptestx/files/",
     entry_points={                    # for standard application
         'distutils.commands': 'testx = setuptestx.testx:TestX',
     },
     install_requires=_install_requires,
-    license=_license,
-    long_description=_long_description,
+    license=__license__,
+    long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
     name=_name,
-    package_data=_package_data,
     packages=_packages,
-    scripts=_scripts,
-    url=_url,
+    scripts=[],
+    url='https://sourceforge.net/projects/setuptestx/',
     version=_version,
     zip_safe=False,
 )
@@ -291,3 +238,4 @@ if '--help' in sys.argv or '-h' in sys.argv:
     print()
 
 sys.exit(0)
+

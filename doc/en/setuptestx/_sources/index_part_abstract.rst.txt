@@ -24,7 +24,7 @@ the various target platforms and configurations.
    :width: 16
 
 The *setuptestx* supports the basic interface to call the required regression tests
-by a unique intrface on all supported source and target platforms.
+by a unique interface on all supported source and target platforms.
 This includes for example some of the basic paramteters for *Jython* related to *Java*. 
 
 For tested standard OS and distributions see `installation <install.html>`_ / :ref:`Tested OS and Python Implementations <TESTED_OS_PYTHON>`.
