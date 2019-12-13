@@ -15,7 +15,7 @@ import distutils.cmd
 
 import yapyutils.config.capabilities
 
-import setuplib
+import setuplibcore
 
 from setuptestx import SetupTestXError
 
@@ -148,7 +148,7 @@ class TestX(distutils.cmd.Command):
     def finalize_options(self):        
 
         # scan for any context-help request
-        _help_request = setuplib.check_for_context_help(self)
+        _help_request = setuplibcore.check_for_context_help(self)
         if _help_request:
             print(_help_request)
             sys.exit(0)

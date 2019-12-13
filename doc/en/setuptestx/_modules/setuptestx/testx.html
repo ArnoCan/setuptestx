@@ -195,7 +195,7 @@
 
 <span class="kn">import</span> <span class="nn">yapyutils.config.capabilities</span>
 
-<span class="kn">import</span> <span class="nn">setuplib</span>
+<span class="kn">import</span> <span class="nn">setuplibcore</span>
 
 <span class="kn">from</span> <span class="nn">setuptestx</span> <span class="k">import</span> <span class="n">SetupTestXError</span>
 
@@ -328,7 +328,7 @@
 <div class="viewcode-block" id="TestX.finalize_options"><a class="viewcode-back" href="../../setuptestx.testx.html#setuptestx.testx.TestX.finalize_options">[docs]</a>    <span class="k">def</span> <span class="nf">finalize_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
 
         <span class="c1"># scan for any context-help request</span>
-        <span class="n">_help_request</span> <span class="o">=</span> <span class="n">setuplib</span><span class="o">.</span><span class="n">check_for_context_help</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">_help_request</span> <span class="o">=</span> <span class="n">setuplibcore</span><span class="o">.</span><span class="n">check_for_context_help</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">_help_request</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">_help_request</span><span class="p">)</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
